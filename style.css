@@ -1,0 +1,236 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*, *::after, * *::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-text: #242424;
+}
+
+body[style*="background-color"] {
+  --color-text: #f1f1f1;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color 1s;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.container--header {
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.container--content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 980px;
+  margin-bottom: 60px;
+}
+
+.container--footer {
+  padding-top: 60px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1420px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 0;
+}
+
+.nav__logo .logo {
+  max-width: 100px;
+  fill: red;
+}
+
+.nav__menu {
+  display: flex;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+  border: 1px solid var(--color-text);
+  border-width: 1px 0;
+  transition: border-color 1s;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 5px 0;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1420px;
+}
+
+.footer-menu__group {
+  width: 50%;
+  margin-bottom: 2.5em;
+}
+
+.title {
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: color 1s;
+  transition: 1s color;
+}
+
+.footer-title {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .5px;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.footer-link {
+  font-size: .9em;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .5px;
+  margin-bottom: 1.5em;
+}
+
+.gallery {
+  min-height: 150vh;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.drop-shadow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4em;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.95));
+}
+
+.drop-shadow:hover .clip-path-arrow {
+  clip-path: polygon(100% 0%, 90% 50%, 100% 100%, 10% 100%, 0% 50%, 10% 0%);
+  transition: clip-path 1s;
+}
+
+.drop-shadow:hover .clip-path-arrow img {
+  transform: scale(1.05);
+  transition: transform .5s;
+}
+
+.clip-path-arrow {
+  clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%);
+  transition: clip-path 1s;
+}
+
+.clip-path-arrow img {
+  transition: transform .5s;
+}
+
+.clip-path-trapezoid {
+  --x-trapezoid: 5%;
+  clip-path: polygon(0% 0%, var(--x-trapezoid) 0%, 100% 100%, 0% var(--x-trapezoid));
+  transition: clip-path 2s;
+}
+
+.clip-path-trapezoid--right {
+  clip-path: polygon(0% 0%, var(--x-trapezoid) 0%, 100% 100%, 0% 100%);
+}
+
+body {
+  transition: background-color 1.5s;
+}
+
+@media (max-width: 767.98px) and (orientation: landscape) {
+  .drop-shadow > * {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container--header {
+    margin-bottom: 120px;
+  }
+  .container--content {
+    margin-bottom: 120px;
+  }
+  .container--footer {
+    padding-top: 40px;
+  }
+  .nav {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .nav__menu {
+    justify-content: space-between;
+    margin: 0 0 0 auto;
+    width: auto;
+    border: 0;
+  }
+  .nav__menu li:not(:first-of-type) {
+    margin-left: 45px;
+  }
+  .nav--fixed-768-up {
+    position: fixed;
+    top: 0;
+    width: calc(100% - 30px);
+    left: 15px;
+    right: 15px;
+    background-color: inherit;
+    z-index: 1;
+  }
+  .footer-menu__group {
+    width: auto;
+  }
+}
