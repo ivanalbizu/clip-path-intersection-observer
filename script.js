@@ -20,7 +20,7 @@ const ioBgcolorHandler = entries => {
 const ioConfigTrapezoid = {
   root: null,
   rootMargin: '0px',
-  threshold: buildThreshold(50)
+  threshold: buildThreshold(150)
 };
 const ioConfigBg = {
   root: null,
