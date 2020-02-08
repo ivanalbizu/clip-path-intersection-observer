@@ -40,12 +40,11 @@ window.onload = () => {
   imgs.forEach(img => {
     const vibrant = new Vibrant(img);
     const swatches = vibrant.swatches()
-    for (let swatch in swatches) {
-      if (swatches.hasOwnProperty(swatch) && swatches[swatch]) {
+    for (let swatch in swatches)
+      if (swatches.hasOwnProperty(swatch) && swatches[swatch])
         img.setAttribute(`data-${swatch}`, swatches[swatch].getRgb());
-        ioBgcolor.observe(img);
-      }
-    }
+
+    ioBgcolor.observe(img);
   });
 
   [].forEach.call(trapezoids, trapezoid => ioTrapezoid.observe(trapezoid));
