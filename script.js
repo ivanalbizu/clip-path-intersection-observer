@@ -13,6 +13,8 @@ const ioBgcolorHandler = entries => {
   for (let entry of entries) {
     if (entry.intersectionRatio > 0.2) {
       document.body.style.backgroundColor = `rgb(${entry.target.dataset.darkvibrant})`;
+      let metaThemeColor = document.querySelector("meta[name=theme-color]");
+      if (metaThemeColor) metaThemeColor.setAttribute("content", `rgb(${entry.target.dataset.darkvibrant})`);
     }
   }
 }
