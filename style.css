@@ -144,7 +144,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 .gallery {
-  min-height: 150vh;
+  min-height: 155vh;
   display: flex;
   width: 100%;
   flex-direction: column;
